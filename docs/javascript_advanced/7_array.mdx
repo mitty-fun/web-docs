@@ -1,0 +1,24 @@
+---
+title: '11. 認識陣列'
+sidebar_position: 11
+---
+import Playground  from '../../src/components/playground'
+
+## 陣列切割刀
+陣列使用一對中括號填入兩個數值參數，可以用來做切割的動作。
+兩個參數表示要切割的範圍，但不包含結尾的元素。
+
+<Playground javascript={`
+let arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];\n
+console.log(arr.slice(3, 6)); //['D', 'E', 'F']
+console.log(arr.slice(2, 8)); //['C', 'D', 'E', 'F', 'G', 'H']
+`}/>
+
+此方法也適用於字串：
+<Playground javascript={`
+let arr = 'ABCDEFGHIJ';\n
+console.log(arr.slice(3, 6)); //'DEF'
+console.log(arr.slice(2, 8)); //'CDEFGH'
+`}/>
+
+另外一個常使用的方法是 splice 用來做內容拼接的作用，和 slice 只差一個 p 字母，很容易搞錯。

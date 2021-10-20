@@ -1,0 +1,92 @@
+:root {
+  --border-color: #ccc;
+  --content-height: 150px;
+  --border-radius: 7px;
+}
+
+.root {
+  border-radius: var(--border-radius);
+  width: 100%;
+  padding: 15px 0px;
+  margin: 15px 0px;
+}
+
+.root:not(.dark) {
+  background-color: #f6f8fa;
+}
+
+.root.dark {
+  background-color: #282a36;
+}
+
+.root.dark .console {
+  background-color: #18191a;
+}
+
+.editorWrapper {
+  position: relative;
+}
+
+.resultWrapper {
+  padding: 0px 15px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.console {
+  margin: 0;
+  background-color: #333;
+  height: calc(100% - 30px);
+  border-radius: var(--border-radius);
+  color: #fff;
+  padding: 15px;
+  min-height: 48px;
+}
+
+.languages {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  display: flex;
+}
+
+.btn {
+  padding: 5px 15px;
+  border-radius: var(--border-radius);
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 12px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.print {
+  display: block;
+}
+
+.errorlog {
+  display: block;
+  color: red;
+}
+
+.textlog {
+  display: block;
+  color: #fff;
+}
+
+.btn.active {
+  color: #fff;
+  background-color: #25c2a0;
+}
+
+.d-none {
+  display: none;
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  border-width: 0px;
+  box-shadow: 0px 0px 1px #888;
+  border-radius: var(--border-radius);
+}

@@ -1,0 +1,71 @@
+---
+title: '8. 邏輯運算'
+sidebar_position: 8
+---
+import Playground  from '../../src/components/playground'
+
+# 邏輯運算
+邏輯運算符號可以幫助我們去組織更複雜的條件。
+
+想一個情境，小明想要報名 Scratch 遊戲競賽設計大賽，但這個大賽限制只能國小、國中、高中參賽，
+也就是年齡必須介於 7 - 18 歲之間，因此在報名網頁必須輸入年齡，並用程式判斷報名的人有沒有資格。
+如果我們把審核的流程用程式來撰寫
+<Playground javascript={`
+let age = Number(prompt('請輸入年齡:'));
+if (age >= 7) {
+    if (age <= 18) {
+        alert('你可以報名！');
+    }
+}
+`}/>
+如果審核的條件增加，就會讓程式「越陷越深」，這樣並不是一個好的設計，因此我們可以應用接下來所學的邏輯運算來簡化它。
+
+## 而且
+這時我們可以使用邏輯運算的「而且」語法，它可以將多個必須具備的條件合併一起，只有所有條為 true 時，它才會返回 true，
+因此我們可以改寫上述程式為：
+<Playground javascript={`
+if (age >= 7 && age <= 18) {
+    alert('你可以報名！');
+}
+`}/>
+這樣程式是不是相較就更簡潔了。
+
+而且 `&&` 語法會判斷它左右兩邊的對象，只有在左右兩邊都是 `true` 的情況下，它才會返回 `true` 否則反回 `false`
+<Playground javascript={`
+alert(true && true); // true
+alert(false && true); // false
+alert(true && false); // false
+alert(false && false); // false
+`}/>
+當然我們在寫如果條件判斷時，更常用比較運算來表達，所以我們替換它後得到的結果也是一樣
+<Playground javascript={`
+alert(20 > 10 && 20 > 10); // true
+alert(5 < 3 && 20 > 10); // false
+alert(20 > 10 && 5 < 3); // false
+alert(5 < 3 && 5 < 3); // false
+`}/>
+
+## 或者
+或者語法，也一樣可以將多個條件合併起來，但它的運作方式不一樣，是只要有任何一個條件為 true 時，它就會返回 true
+
+<Playground javascript={`
+alert(true || true); // true
+alert(false || true); // true
+alert(true || false); // true
+alert(false || false); // false
+`}/>
+
+將範例替換成比較運算的式子，得到的結果也是一樣
+<Playground javascript={`
+alert(20 > 10 || 20 > 10); // true
+alert(5 < 3 || 20 > 10); // true
+alert(20 > 10 || 5 < 3); // true
+alert(5 < 3 || 5 < 3); // false
+`}/>
+
+## 相反
+相反與可以將布林值顛倒過來，true 會變成 false，false 會變成 true
+<Playground javascript={`
+alert(!true);
+alert(!false);
+`}/>

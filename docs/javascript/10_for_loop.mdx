@@ -1,0 +1,89 @@
+---
+title: '10. 認識 for 迴圈'
+sidebar_position: 10
+---
+import Playground  from '../../src/components/playground'
+
+# for 迴圈
+迴圈用來重複執行指定範圍內的程式
+
+## for 與 while 迴圈的差異
+while 迴圈可以做到和 for 迴圈一樣的事情，但寫程式時有很多時候經常要用到「指定次數」的迴圈，
+因此有了 for 迴圈語法，讓我們撰寫時更簡潔。
+
+在前面我們若要使用 while 迴圈去執行指定的次數例如 10 次，我們要這麼寫：
+<Playground javascript={`
+let i = 0;
+while (i < 10) {
+  console.log(i);
+  i += 1;
+}
+`}/>
+
+但如果我們用 for 迴圈就可以改寫成如下：
+<Playground javascript={`
+for (let i = 0; i < 10; i += 1) {
+  console.log(i);
+}
+`}/>
+
+## 結構
+在上一個章節 while 迴圈，我們最後做了印數列的練習，並歸納整理出三個要素，這三個要素也就是 for 迴圈要有的三個要素：起始、條件、變化
+<Playground javascript={`
+for (起始; 條件; 變化) {
+  // 要重複執行的程式
+}
+`}/>
+* 起始：迴圈開始前會執行一次，通常用來初始化計數迴圈次數的變數
+* 條件：條件滿足時迴圈才會不斷執行
+* 變化：迴圈每執行完一次，就會做一次變化，通常用來讓計數的變數遞增
+
+<Playground javascript={`
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}
+`}/>
+* 起始：初始化變數 i 為數值 0
+* 條件：當變數 i 數值高於 10 時迴圈就會結束
+* 變化：迴圈每執行完一次，變數 i 裡的數值就會增加 1
+
+
+## 數列練習
+在 while 迴圈的章節中，我們做了 5 個印出數列的練習，接下來我們要用 for 迴圈語法去改寫一樣的範例，
+你也可以回上個章節，去來回參考比對看看。
+
+
+變數 i 起始值是 0 結束條件是高於 100，每次執行時遞增 1
+<Playground javascript={`
+for (let i = 0; i < 100; i += 1) {
+    console.log(i);
+}
+`}/>
+
+變數 i 起始值是 40 結束條件是高於 100，每次執行時遞增 1
+<Playground javascript={`
+for (let i = 40; i < 80; i += 1) {
+    console.log(i);
+}
+`}/>
+
+變數 i 起始值是 0 結束條件是高於 100，每次執行時遞增 2
+<Playground javascript={`
+for (let i = 0; i < 100; i += 2) {
+    console.log(i);
+}
+`}/>
+
+變數 i 起始值是 100 結束條件是低於 0，每次執行時遞減 1
+<Playground javascript={`
+for (let i = 100; i > 0; i -= 1) {
+    console.log(i);
+}
+`}/>
+
+變數 i 起始值是 50 結束條件是低於 -50，每次執行時遞減 5
+<Playground javascript={`
+for (let i = 50; i > -50; i -= 5) {
+    console.log(i);
+}
+`}/>

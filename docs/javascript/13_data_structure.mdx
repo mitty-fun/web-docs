@@ -1,0 +1,77 @@
+---
+sidebar_position: 13
+title: '13. 資料結構'
+---
+import Playground  from '../../src/components/playground'
+
+# 認識資料結構
+當程式要處理複雜的資料時，將資料組織好，可以避免程式變得混亂。
+
+在程式中主要有兩種方式可以組織資料，分別是陣列 `[]` 以及物件 `{}`。
+
+## 物件 v.s 陣列差別
+想像學校的教室，後面有一排置物櫃，是用來給學生放置書本或上課用品，<br/>
+班上的每一個人都擁有屬於自己的格子可以放東西，但為了辨別這個格子是屬於誰的，<br/>
+我們可以在格子上貼上座號，學生就可以透過座號，去找到格子並存放物品，就像是陣列一樣。<br/>
+也可以貼上姓名，學生就可以透過名字，去找到格子並存放物品，就像是物件一樣。
+
+例如班級有五位同學
+
+|座號|姓名|物品|
+|-|-|-|
+|0|tony|課外書|
+|1|chia|烏克麗麗|
+|2|debbie|水彩用品|
+|3|poyi|數學課本|
+|4|greentea|直笛|
+
+用陣列的方式來儲存表示：
+<Playground javascript={`
+let arr = ['課外書', '烏克麗麗', '水彩用品', '數學課本', '直笛'];\n
+console.log(arr[0]); // 印出座號 0 的格子物品
+console.log(arr[1]); // 印出座號 1 的格子物品
+`}/>
+
+用物件的方式來儲存表示：
+<Playground javascript={`
+let obj = {
+    tony: '課外書',
+    chia: '烏克麗麗',
+    debbie: '水彩用品',
+    poyi: '數學課本',
+    greentea: '直笛'
+}\n
+console.log(obj['tony']); // 印出姓名「tony」的格子物品
+console.log(obj['chia']); // 印出姓名「chia」的格子物品
+`}/>
+
+
+## 資料結構（表述資料的方式）
+* 陣列裡可以放陣列，也可以放物件。
+* 物件裡可以放物件，也可以放陣列。
+* 如同變數一樣甚至可以存放函式。
+
+## 陣列裡的物件
+<Playground javascript={`
+let data = [
+    { name: 'Chia', age: 18 },
+    { name: 'Tony', age: 26 },
+    { name: 'Debbie', age: 18 },
+    { name: 'Poyi', age: 13 },
+    { name: 'Vivian', age: 16 }
+]\n
+let sum = data[0].age + data[1].age + data[2].age + data[3].age + data[0].age + data[4].age;
+console.log('平均年齡:' + sum / 5 + '歲');
+`}/>
+
+
+## 物件裡的陣列
+<Playground javascript={`
+let user = {
+    name: 'Mitty',
+    age: 20,
+    scores: [99, 85, 93, 64, 79]
+}\n
+let sum = user.scores[0] + user.scores[1] + user.scores[2] + user.scores[3] + user.scores[4];
+console.log(sum / 5);
+`} />

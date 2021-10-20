@@ -1,0 +1,79 @@
+---
+title: '4. 四則運算'
+sidebar_position: 4
+---
+import Playground  from '../../src/components/playground'
+
+# 四則運算
+程式可以幫我們去做大量的運算，所以也會有對應常見的運算符號，例如加減乘除等。
+
+## 常用運算符號
+|符號|用途|範例|結果|
+|-|-|-|-|
+|加|+|10 + 10|20|
+|減|-|15 - 10|5|
+|乘|*|15 * 10|150|
+|除|/|20 / 10|2|
+|取餘數|%|10 % 4|2|
+|次方|**|10 ** 3|1000|
+
+<Playground javascript={`
+console.log(10 + 10);
+console.log(15 - 10);
+console.log(15 * 10);
+console.log(20 / 10);
+console.log(10 % 4);
+console.log(10 ** 3);
+`}/>
+
+## 執行順序
+程式在執行計算時，和數學一樣必須符合先乘除後加減的規則。
+<Playground javascript={`
+let result = 10 + 10 * 20 + (30 - 40) / 50;
+console.log(result);
+`}/>
+
+## 指派運算符號
+程式在執行運算後會返回結果
+
+<Playground javascript={`
+let a = 10;
+a + 10;
+console.log(a); // 10
+`}/>
+
+執行以下程式，程式確實會把變數 `a` 裡的資料讀取出來，並和數值 `10` 做數學的相加並算出數值 `20`，
+但算出來的數值並沒有存回變數，而只是單純的做完數學相加計算後就結束，因此最後顯示出來的仍然是數值 10
+
+<Playground javascript={`
+let a = 10;
+a = a + 10;
+console.log(a);
+`}/>
+所以我們必須再次透過等號將算完的結果重新存回變數 `a` 當中
+
+因為改變變數裡的資料太常使用，因此必須可以簡寫為如下：
+<Playground javascript={`
+let a = 10;
+a += 10;
+console.log(a);
+`}/>
+
+## 遞增和遞減
+如果要讓變數裡的數值增加 1 有三種方式，試著執行以下程式看看結果是否都一樣是 `11` 。
+<Playground javascript={`
+// 第一種方式
+let a = 10;
+a = a + 1;
+console.log(a);\n
+// 第二種方式
+let b = 10;
+b += 1;
+console.log(b);\n
+// 第三種方式
+let c = 10;
+c++;
+console.log(c);
+`}/>
+除了遞增 1 可以寫成 `++` 外遞減是否可以寫成 `--` 呢？<br/>
+試著把 `+` 號改成 `-` 減號並重新執行看看，是否結果都會是 `9` 吧！

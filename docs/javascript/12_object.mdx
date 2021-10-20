@@ -1,0 +1,115 @@
+---
+sidebar_position: 12
+title: '12. 認識物件'
+---
+import Playground  from '../../src/components/playground'
+
+# 認識物件
+在 JavaScript 程式中，物件是一種被用來**組織**和**收納**資料的方式。
+
+## 物件長什麼樣子？
+物件和陣列非常相似，我們一樣可以把物件想像成是一個櫃子，這個櫃子有很多個格子可以讓我們存放東西，
+每個格子上都會掛上一個名牌，名牌是獨一無二不能重複的，透過名牌我們就可以去存取其對應格子裡的資料。
+
+想像一個情境，我們程式想要去紀錄使用者的健康資料，我們要儲存該使用者的姓名、體重、身高，
+因此我們可以用三個變數來儲存：
+<Playground javascript={`
+let name = '小智';
+let weight = 52;
+let height = 165;
+`} />
+
+如果這個程式可以紀錄多個使用者的資料那我們必須改寫程式：
+
+<Playground javascript={`
+let s1_name = '小智';
+let s1_weight = 52;
+let s1_height = 165;\n
+let s2_name = '小美';
+let s2_weight = 49;
+let s2_height = 161;
+`} />
+
+我們可以應用物件來將相關聯的資料組織在一起，物件就是多個變數合併在一起
+<Playground javascript={`
+let s1 = { name: '小智', weight: 52, height: 165 }
+let s2 = { name: '小美', weight: 49, height: 161 }
+`} />
+
+當物件資料很多時，我們可以透過換行方式來呈現，其執行起來是一樣的
+<Playground javascript={`
+let s1 = {
+  name: '小智',
+  weight: 52,
+  height: 165
+}
+let s2 = {
+  name: '小美',
+  weight: 49,
+  height: 161
+}
+`} />
+
+## 為什麼需要物件？
+隨著程式越來越多，我們面對的資料也會越來越多，將資料有條的整理好，可以幫助我們在寫程式時不會混亂。
+物件也經常被用來收納各種函式，例如我們常使用的 random 隨機數，就是被收納在 Math 這個物件底下：
+
+<Playground javascript={`Math.random()`}/>
+
+## 物件的語法
+在 JavaScript 程式語言中，物件用一對大括號 `{}` 表示，要存放的資料寫在大括號中。<br/>
+每一筆資料都會用逗號 `,` 隔開，其資料名稱和內容會用冒號 `:` 相隔。
+
+這是一個擁有姓名和年齡兩筆資料的物件，試著把 `user` 印出來看看！
+<Playground javascript={`
+// 物件用一對大括號表示，冒號的左邊是鍵 key，冒號的右邊是值 value\n
+var user = { name: 'Tony', age: 18 }
+`}/>
+
+如果你把 `user` 印出來你會看到整個物件完整的被顯示，但如果只是想取得姓名或年齡，
+我們可以使用一對中括號 `[]` 來讀取指定的資料。
+
+例如我們想印出年齡可以這麼做：
+<Playground javascript={`
+var user = { name: 'Tony', age: 18 } \n
+console.log(user['age']);
+`}/>
+
+我們可以傳入該資料的名稱，記得 age 要用字串的方式來表示，不然電腦會把它當作變數導致程式錯誤！
+
+你發現了嗎，讀取物件的資料和讀取陣列一樣，都是使用到一對中括號 `[]` <br/>
+只是陣列是使用資料的編號，而物件是使用名稱。
+
+陣列除了使用中括號 `[]` 讀取指定的資料外，還可以使用點 `.` 語法讀取資料。
+
+例如可以這麽做：
+
+<Playground javascript={`
+let user = { name: "大衛", age: 18 }\n
+console.log(user.name);
+console.log(user.age);
+`} />
+
+這樣的程式是不是覺得很熟悉，在 JavaScript 程式語言中會很經常看到類似的語法。
+
+## 改變物件裡的資料
+
+物件就像是多個變數的集合體，我們可以使用等號 `=` 來設定資料也可以用來改變物件裡的資料。
+
+<Playground javascript={`
+let user = { name: "大衛", age: 18 }\n\n
+// 就像是變數一樣，可以直接用等號來設定改寫資料
+user['name'] = '子嘉';
+user.age = 16;
+console.log(user); //印出來
+`} />
+
+如果設定不存在的名稱時程式會出錯嗎？試著執行看看吧
+
+<Playground javascript={`
+let user = { name: "大衛", age: 18 }\n\n
+// 如果 key 不存在也可以直接新增上去
+user['weight'] = 50;
+user.height = 160;
+console.log(user); //印出來
+`} />
