@@ -118,11 +118,7 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/orangeappletw/',
-              },
-              {
-                label: 'Contact',
-                href: 'mitty.fun@gmail.com',
-              },
+              }
             ],
           },
           
