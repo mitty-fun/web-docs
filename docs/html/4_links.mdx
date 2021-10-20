@@ -1,0 +1,41 @@
+---
+title: '4. 連結'
+sidebar_position: 4
+---
+import Playground  from '../../src/components/playground'
+
+# 連結
+在網頁中你可以點擊連結去瀏覽其他相關聯的網頁，透過點擊連結可以來回在不同的頁面中瀏覽。
+
+在 HTML 中會用 `<a>` 標籤表示連結，它有一個重要的屬性 `href` 可以用來指令連結要前往的頁面的網址。<br/>
+
+執行以下的範例並點擊連結：
+<Playground html={`
+<a href="https://orangeapple.co/">前往橘子頻果</a>
+`} />
+
+
+## 開新分頁
+有的時候我們不希望讓網頁被跳轉，我們希望按下連結時會以新分頁的方式開啟，
+可以加上 `target="_blank"` 的屬性和值來設定：
+
+<Playground html={`
+<a href="https://orangeapple.co/" target="_blank">前往橘子頻果</a>
+`} />
+
+## 圖片連結
+連結不一定只能放文字，你可以把其他同為 HTML 元素做為連結，只需要將其放在 `<a>` 標籤裡即可，
+例如想要將圖片變成連結，我們可以寫成這樣：
+
+<Playground html={`
+<a href="https://orangeapple.co/">
+  <img src="/static/img/docusaurus.png" />
+</a>
+`} />
+
+除了圖片外也可以試試放一個按鈕，變成按鈕外觀的連結：
+<Playground html={`
+<a href="https://orangeapple.co/"">
+  <button>前往橘子蘋果</button>
+</a>
+`} />

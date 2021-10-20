@@ -1,0 +1,28 @@
+---
+title: '6. 浮動屬性'
+sidebar_position: 6
+---
+import Playground  from '../../src/components/playground'
+
+## 浮動屬性
+可以改變讓網頁元素的排版方向，
+一般的網頁和寫文章一樣，通常是由左向右由上至下。
+
+透過修改 `float` 元素可以改變該元素的排版方向。
+
+例如：
+
+<Playground
+html={`
+<div>
+  <span>AA</span>
+  <span>BB</span>
+  <span>CC</span>
+</div>
+`}
+css={`
+div {
+  float: right;
+}
+`}
+/>

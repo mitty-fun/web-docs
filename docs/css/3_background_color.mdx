@@ -1,0 +1,28 @@
+---
+title: '3. 背景顏色'
+sidebar_position: 3
+---
+import Playground  from '../../src/components/playground'
+
+# 背景顏色
+和設定文字顏色一樣，可以使用顏色單詞、rgb 表示法、色碼來設定顏色，<br/>
+設定背景顏色的語法為 `background-color`。
+
+執行看看以下的範例：
+<Playground html={`
+<body>
+  <h1>你看不到我～</h1>
+</body>
+`}
+css={`
+body {
+  background-color: black;
+}
+`}
+/>
+
+所有看得到的元素在網頁中都是被包含在 `<body>` 元素裡，設定此元素樣式等同於對整個網頁設定樣式。<br/>
+如果要改變整個網頁的預設背景顏色，就可以直接設定這個元素。
+
+你有發現網頁中其實有文字，但因為文字也是黑色所以導致看不出文字內容，<br/>
+試著修改讓文字變成白色看看。

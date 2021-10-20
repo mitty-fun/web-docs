@@ -1,0 +1,41 @@
+---
+title: '5. 盒子模型'
+sidebar_position: 5
+---
+import Playground  from '../../src/components/playground'
+
+# 盒子模型
+設計網頁就像是在蓋房子砌牆一道牆，網頁上的每一個元素就像是一個個磚塊。<br/>
+我們可以把每一個元素看作一個個盒子，可以拆解成四個部分。
+
+* `width`、`height` 內容的長度與寬度
+* `padding` 內距，就像是 A4 紙張的影印，印刷的文字不會從紙張的最左上角開始印，<br/>一定會距離紙張上下左右有一定的空隙，這就是 padding
+* `border` 邊框，就像是紙盒子的盒子本身厚度
+* `margin` 外距，元素與元素之間可以互相推出一個空間，讓他們不要靠得太近
+
+<Playground
+html={`
+<div>
+  <p>我只是 div 裡的一個文字段落！</p>
+</div>
+<div>
+  <p>我只是 div 裡的一個文字段落！</p>
+</div>
+<div>
+  <p>我只是 div 裡的一個文字段落！</p>
+</div>
+`}
+css={`
+div {
+  width: 200px; /*寬度*/
+  height: 100px; /*高度*/
+  padding: 30px; /*內距*/
+  border: 5px solid red; /*邊寬*/
+  margin: 60px; /*外距*/
+}
+`}
+/>
+
+## 塊狀元素與內聯元素
+網頁元素預設有兩種不同的屬性，塊狀以及內聯。<br/>
+

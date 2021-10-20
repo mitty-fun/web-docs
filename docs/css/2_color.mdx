@@ -1,0 +1,64 @@
+---
+title: '2. 文字顏色'
+sidebar_position: 2
+---
+import Playground  from '../../src/components/playground'
+
+# 文字顏色
+設定文字顏色可以透過 `color` 屬性來改變。
+
+<Playground html={`<h1>哈囉 HTML</h1>`}
+css={`
+h1 {
+  color: red;
+  font-size: 30px;
+}
+`}
+/>
+
+## 顏色的表達方式
+在 CSS 中表達顏色有三種方式，分別為顏色單詞、rgb表示法、色碼
+
+### 顏色單字
+網頁可以使用的顏色單詞非常多，例如：
+紅色 red<br/>
+綠色 green<br/>
+藍色 blue<br/>
+黃色 yellow<br/>
+橘色 orange<br/>
+紫色 purple<br/>
+白色 while<br/>
+黑色 black<br/>
+
+試著把文字段落改成紫色看看：
+<Playground html={`<h1>哈囉 HTML</h1>`} css={`h1 { color: red; }`}/>
+
+### rgb 表達
+所有的顏色都可以用三原色紅、綠、藍組合而成，在網頁中也可以透過這三個顏色的數值來呈現不同的顏色。
+
+rgb 分別是 red、green、blue 三種顏色，數值範圍在 0 - 255 之間，例如要表示紅色可以這樣寫：
+<Playground html={`<p>這是紅色</p>`} css={`p { color: rgb(255, 0, 0); }`} />
+
+要表示綠色可以這樣寫：
+<Playground html={`<p>這是藍色</p>`} css={`p { color: rgb(255, 0, 0); }`} />
+
+如果要把紅色以及綠色都調整到最大數值 255 組合出來的顏色會是什麼呢？試著執行看看
+<Playground html={`<p>這是什麼顏色呢</p>`}
+css={`p { color: rgb(255, 255, 0); }`}/>
+
+### 色碼
+色碼和 rgb 表達式一樣，都是用三原色去組合而成。<br/>
+只是顏色從原本的十進位數值 0-255 表示改成十六進位數值表示。
+
+例如十進位 255 用 16 進位表示就會是英文 ff，<br/>
+而白色的 rgb 會是 255, 255, 255 用 16 進位表示就會是 fffff。
+
+用色碼表示白色，前面要加上 井字號 `#` 就會是 `#ffffff`。
+
+<Playground html={`<p>這是紅色</p>`}
+css={`
+p {
+  color: #ff0000;
+}
+`}
+/>

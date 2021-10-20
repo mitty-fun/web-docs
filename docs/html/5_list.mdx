@@ -1,0 +1,40 @@
+---
+title: '5. 設計列表'
+sidebar_position: 5
+---
+import Playground  from '../../src/components/playground'
+
+# 列表
+如果想要將內容用條列的方式呈現，就可以使用列表元素。
+
+在 HMTL 中提供兩種列表可以使用，分別是有順序列表 `<ol>` 以及無順序列表 `<ul>`。
+
+如果有些文字內容想要用列表的方式呈現，可以使用 `<ol>` 以及 `<ul>` 這兩個標籤與法。
+
+## 有順序列表
+<Playground html={`
+<ol>
+  <li>吃早餐</li>
+  <li>去晃晃</li>
+  <li>彈吉他</li>
+  <li>寫程式</li>
+  <li>去跑步</li>
+</ol>
+`} />
+
+## 無順序列表
+<Playground html={`
+<ul>
+  <li>吃早餐</li>
+  <li>去晃晃</li>
+  <li>彈吉他</li>
+  <li>寫程式</li>
+  <li>去跑步</li>
+</ul>
+`} />
+
+:::info 小技巧
+ol 是 order list 的縮寫 ul 是 unorder list 的縮寫，
+order 是有序列的意思，所以 ol 標籤所呈現的列表內容會帶有數字編號。
+unorder 是不要有順序的意思，所以 ul 則是用圓點來呈現。
+:::

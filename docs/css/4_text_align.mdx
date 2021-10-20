@@ -1,0 +1,27 @@
+---
+title: '4. 文字對齊'
+sidebar_position: 4
+---
+import Playground  from '../../src/components/playground'
+
+# 文字對齊
+使用 `text-aligin` 語法可以設定元素內的文字內容對齊的方式。
+
+<Playground
+html={`
+<p class="left">我會靠左對齊</p>
+<p class="center">我會致中對齊</p>
+<p class="right">我會靠右對齊</p>
+`}
+css={`
+.left {
+  text-align: left;
+}
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+`}
+/>

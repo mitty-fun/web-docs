@@ -43,32 +43,31 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'OrangeApple Docs',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
         },
         items: [
           {
-            type: 'doc',
-            docId: 'javascript/intro',
-            position: 'left',
-            label: 'JavaScript',
-          },
-          {
-            type: 'doc',
+            to: 'docs/python/intro',
             docId: 'python/intro',
             position: 'left',
             label: 'Python',
           },
           {
-            type: 'doc',
+            to: 'docs/javascript/intro',
+            docId: 'javascript/intro',
+            position: 'left',
+            label: 'JavaScript',
+          },
+          {
+            to: 'docs/html/intro',
             docId: 'html/intro',
             position: 'left',
             label: 'HTML',
           },
           {
-            type: 'doc',
+            to: 'docs/css/intro',
             docId: 'css/intro',
             position: 'left',
             label: 'CSS',

@@ -1,0 +1,42 @@
+---
+title: '1. 樣式標籤'
+sidebar_position: 1
+---
+import Playground  from '../../src/components/playground'
+
+# 樣式標籤
+如果要修改元素的樣式，可以加上 `style` 屬性，並撰寫樣式的設定就可以改變該元素的樣式，這稱為「內聯樣式」。<br/>
+
+但更多時候，我們會將網頁的樣式統一寫在一起：
+
+<Playground html={`
+<h1>哈囉 HTML</h1>
+<style>h1 { color: red; }</style>
+`} />
+
+我們來分析 `<style>` 標籤裡的語法，首先 h1 表示要選取網頁上所有的 h1 標籤元素，
+接著一對大括號 `{}` 表示要設定的樣式都會寫在其中，
+在裡面我們的設定和原本的範例一樣 color 表示要設定文字的顏色，冒號 `:` 後面就是要設定的值 `red` 表示紅色。
+
+如果要設定的樣式規則不只一個的時候，我們會做一個換行的排版：
+<Playground html={`
+<h1>哈囉 HTML</h1>
+<style>
+  h1 {
+    color: red;
+    font-size: 30px;
+  }
+</style>
+`} />
+
+除了可以將整個網頁的樣式都寫在 `<style>` 標籤裡，可以讓樣式能被更靈活的重複運用。
+
+為了方便教學在接下來的範例中，我們會將樣式獨立出來，你可以點擊 HTML 或 CSS 標籤來切換：
+<Playground html={`<h1>哈囉 HTML</h1>`}
+css={`
+h1 {
+  color: red;
+  font-size: 30px;
+}
+`}
+/>
