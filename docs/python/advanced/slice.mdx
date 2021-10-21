@@ -1,0 +1,29 @@
+---
+title: '次元切割刀'
+---
+import Playground  from '../../../src/components/playground'
+
+# 次元切割刀
+串列使用一對中括號填入兩個或三個數值參數，可以用來做切割的動作
+兩個參數表示要切割的範圍，但不包含結尾的元素
+三個參數表示要切割的範圍以及間隔，但不包含結尾的元素
+
+範例 7-7
+<Playground python={`
+arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']\n
+arr[3:6] #['D', 'E', 'F']
+arr[2:8] #['C', 'D', 'E', 'F', 'G', 'H']\n
+arr[2:8:2] #['C', 'E', 'G']
+arr[1:8:3] #['B', 'E', 'H']
+`}/>
+
+此方法也適用於字串
+
+範例 7-8
+<Playground python={`
+arr = 'ABCDEFGHIJ'\n
+print(arr[3:6]) #'DEF'
+print(arr[2:8]) #'CDEFGH'\n
+print(arr[2:8:2]) #'CEG'
+print(arr[1:8:3]) #'BEH'
+`}/>

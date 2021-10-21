@@ -1,0 +1,37 @@
+---
+title: '資料型態和轉換'
+---
+import Playground  from '../../../src/components/playground'
+
+# 資料型態和轉換
+
+## 使用 type 檢查資料型態
+<Playground python={`
+type(1) #整數int
+type(0) #整數int
+type(-1) #整數int\n
+type(0.1) #浮點數float
+type(-1.23) #浮點數float
+type(1.0) #浮點數float\n
+type("你好！") #字串str
+type('hi')  #字串str
+type("""
+這是多行字串，
+用三個「"」包住的字串，
+就可以一直寫一直換行ㄛ
+""")  #字串str\n
+type(True) #布林值 bool
+type(False) #布林值 bool
+type(20 > 10) #布林值 bool
+type(20 == 10) #布林值 bool
+`}/>
+
+## 型態之間的轉換
+<Playground python={`
+a = '10' #字串
+b = '20' #字串\n
+#數值計算必須轉為數值型態才能計算
+c = int(a) * int(b)\n
+#字串串接必須把變數 c 轉為字串型態
+print('相乘結果是：' + str(c))
+`}/>

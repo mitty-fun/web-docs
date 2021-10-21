@@ -1,0 +1,60 @@
+---
+sidebar_position: 16
+title: '16. 模組與套件'
+---
+import Playground  from '../../src/components/playground'
+
+# 模組與套件
+套件像是一個個的工具包，是別人寫好的程式可以載入並使用。
+程式有內建很多的套件，例如：隨機數套件、時間套件、檔案套件。
+
+## 產生隨機數的套件
+`random` 是產生隨機數的套件，底下有一個函式方法 `randrange` 可以產生指定範圍內的隨機整數。
+
+<Playground python={`
+import random\n
+rand = random.randrange(10) #產生 0-9 的隨機整數
+print(rand)
+`}/>
+
+<Playground python={`
+import random\n
+random.randrange(10) #產生 0-9 的隨機整數
+random.randrange(100) #產生 0-99 的隨機整數\n
+random.randrange(10, 20) #產生 10-19 的隨機整數
+random.randrange(20, 100) #產生 20-99 的隨機整數\n
+random.randrange(10, 30, 2) #10, 12, 14, ... 28 隨機挑一個數值，不包含 30
+random.randrange(50, 100, 5) #50, 55, 60, ... 95 隨機挑一個數值，不包含 100
+`}/>
+
+## 隨機數套件 random 方法
+Random 套件底下一樣有一個同名的方法，他會產生 0 - 1 之間的一個隨機小數。
+但不會產生數值 1。
+<Playground python={`
+import random\n
+random.random() #產生 0-1 的隨機小數
+random.random()*100 #產生 0-100 的隨機小數
+random.random()*100 + 50 #產生 50-150 的隨機小數
+`}/>
+
+## 載入套件底下的方法
+在程式之中如果很頻繁的使用某些套件的方法，經常要在前面加上套件名稱的前綴，
+為了能讓程式更精簡，可以用 from import 來載入套件底下指定的方法。
+
+<Playground python={`
+from random import randrange\n
+a = randrange(10)
+b = randrange(50)
+c = randrange(100)\n
+print(a, b, c)
+`}/>
+
+也可以使用 * 來載入套件底下所有的方法。
+但實際上不建議使用，因為當程式使用到很多套件時容易會在名稱上衝突，除非程式很單純。
+
+<Playground python={`
+from random import *\n
+a = randrange(10)
+b = random()\n
+print(a, b)
+`}/>

@@ -1,0 +1,81 @@
+---
+title: '11. 認識串列'
+sidebar_position: 11
+---
+import Playground  from '../../src/components/playground'
+
+# For 迴圈
+「for 變數 in 串列」就是會把串列裡的元素，從頭逐一取出並暫存在變數中，
+串列裡有多少筆資料迴圈就會執行幾次，每一次執行都能透過變數去取得讀取出的資料。
+
+以下的例子 for 迴圈會執行五次，每次執行會把串列中的資料逐一取出，並暫存在變數 f 中，以下程式會依序印出橘子、蘋果、香蕉、芭樂、草莓。
+試著執行以下程式並觀察結果。
+
+<Playground python={`
+fruit = ['橘子', '蘋果', '香蕉', '芭樂', '草莓']\n
+for f in fruit:
+    print(f)
+`}/>
+
+以下程式會執行 10 次，並會印出數值 0 到 9
+
+<Playground python={`
+nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n
+for i in nums:
+    print(i)
+`}/>
+
+因為寫程式太常要用到執行「指定次數」的事情，因此誕生出了 range 方法。
+Range 會產生類似串列的東西。
+
+<Playground python={`
+nums = range(10) # 類似 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n
+for i in nums:
+    print(i)
+`}/>
+
+通常我們更常直接寫在迴圈中
+<Playground python={`
+for i in range(10):
+    print(i)
+`}/>
+
+## range 方法
+Range 是產生一種類似串列的東西，但本質上還是略微不同，但使用起來卻非常相似，
+Range 有三種使用方式，可以產生出各種數列。
+
+
+range(10) #[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+range(10, 20) #[10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+range(10, 20, 3) #[10, 13, 16, 19]
+
+
+只有一個參數的例子
+<Playground python={`
+# 印出 0, 1, 2, 3, ... 8, 9
+for i in range(10):
+    print(i)\n
+# 印出 0, 1, 2, 3, ... 28, 29
+for i in range(30):
+    print(i)
+`}/>
+
+有兩個參數的例子
+<Playground python={`
+# 印出 10, 11, 12, 13, ... 18, 19
+for i in range(10, 20):
+    print(i)\n
+# 印出 70, 71, 72, 73, ... 88, 89
+for i in range(70, 90):
+    print(i)
+`}/>
+
+有三個參數的例子
+<Playground python={`
+#印出 10, 12, 14, 16, 18, 20, 22, 24, 26, 28
+for i in range(10, 30, 2): 
+    print(i)\n
+#印出 10, 15, 20, 25
+for i in range(10, 30, 5):
+    print(i)
+`}/>
