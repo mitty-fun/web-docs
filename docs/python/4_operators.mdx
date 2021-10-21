@@ -3,6 +3,7 @@ title: '4. 四則運算'
 sidebar_position: 4
 ---
 import Playground  from '../../src/components/playground'
+import Quiz  from '../../src/components/quiz'
 
 # 四則運算
 程式可以幫我們去做大量的運算，所以也會有對應常見的運算符號，例如加減乘除等。
@@ -59,6 +60,23 @@ a += 10
 print(a)
 `}/>
 
-## 遞增和遞減
-有些程式語言可以用 `++` 或 `--` 讓變數裡的數值遞增 1 或減少 1，
-但 Python 沒有這樣的簡寫語法反而會導致程式出錯。
+## 應用時間
+在學會程式做數學計算的幾個基本符號後，我們來設計一個計算梯形面積的程式，<br/>
+它會讓使用者輸入上底、下底、高的數值，並計算出面積顯示。
+<Playground python={`
+a = input('梯形上底：')
+b = input('梯形下底：')
+c = input('梯形高：')\n
+area = (a + b) * c / 2
+print('梯形面積為：' + area)
+`}/>
+
+<Quiz
+  description={`最後一個範例程式如果把 (a + b) 的小括號給移除，執行後會有什麼不同？`}
+  options={[
+    '執行結果一樣',
+    '計算出來的結果會不正確',
+    '程式會出現錯誤導致無法執行',
+  ]}
+  answer={1}
+/>

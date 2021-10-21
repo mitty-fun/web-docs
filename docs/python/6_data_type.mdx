@@ -3,6 +3,7 @@ title: '6. 認識資料型態'
 sidebar_position: 6
 ---
 import Playground  from '../../src/components/playground'
+import Quiz  from '../../src/components/quiz'
 
 # 資料資料型態
 整數數字、有小數點的數字、一段文字、一張圖片、一隻音樂，不同類型的資料，<br/>
@@ -92,3 +93,13 @@ print(10 + 'apple')
 name = input('請輸入姓名')
 print('你好' + name + '很高興認識你！')
 `}/>
+
+<Quiz
+  description={`請問關於 Python 程式以下敘述何者錯誤？`}
+  options={[
+    '數字和字串相加，程式會出錯',
+    '數字和字串相乘，程式會出錯',
+    '字串和字串相加，結果會是字串'
+  ]}
+  answer={0}
+/>

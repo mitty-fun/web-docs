@@ -3,6 +3,7 @@ title: '3. 認識變數'
 sidebar_position: 3
 ---
 import Playground  from '../../src/components/playground'
+import Quiz  from '../../src/components/quiz'
 
 # 認識變數
 幾乎所有的程式語言都會設計變數，變數是程式用來記住事情的方式。
@@ -41,10 +42,16 @@ a = 30 //設定變數 a 的資料為 30
 console.log(a); //印出 30`} />
 
 ## 挑戰你的大腦
-創造兩個變數 a 和 b 並都分別存入數值 10 和 20，想想看最後 a 和 b 是存入什麼樣的內容？<br/>
-試著加入 `console.log(a, b);` 到最後一行並執行看看吧
+創造兩個變數 `a` 和 `b` 並都分別存入數值 `10` 和 `20`，想想看最後 `a` 和 `b` 是存入什麼樣的內容？<br/>
+加入 `console.log(a, b);` 程式到最後一行，並執行看看 `a` 和 `b` 變數裡的數值會是多少？
 <Playground javascript={`let a = 10;\nlet b = 20;\na = b;\nb = a;`} />
 
-創造兩個變數 a 和 b 並都分別存入數值 10，接著做了兩行的的相加計算，試著想想看最後 a 和 b 會存入什麼樣的內容？<br/>
-試著加入 `console.log(a, b);` 到最後一行並執行看看吧
-<Playground javascript={`let a = 10;\nlet b = 10;\na = a + b;\nb = a + b;`} />
+我們再來做一些變化，創造兩個變數 `x` 和 `y` 並都分別存入數值 `10`，<br/>
+接著做了兩行的的相加計算，試著想想看最後 `a` 和 `b` 會存入什麼樣的內容？<br/>
+<Playground javascript={`let x = 10;\nlet y = 10;\nx = x + y;\ny = x + y;`} />
+
+<Quiz
+  description={`執行最後一個範例程式，請問最後變數 x 和 y 裡的數值會是多少？`}
+  options={[ 'x: 20 y: 20', 'x: 20 y: 30', 'x: 30 y: 30' ]}
+  answer={2}
+/>

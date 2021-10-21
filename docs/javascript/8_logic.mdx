@@ -3,6 +3,7 @@ title: '8. 邏輯運算'
 sidebar_position: 8
 ---
 import Playground  from '../../src/components/playground'
+import Quiz  from '../../src/components/quiz'
 
 # 邏輯運算
 邏輯運算符號可以幫助我們去組織更複雜的條件。
@@ -32,35 +33,35 @@ if (age >= 7 && age <= 18) {
 
 而且 `&&` 語法會判斷它左右兩邊的對象，只有在左右兩邊都是 `true` 的情況下，它才會返回 `true` 否則反回 `false`
 <Playground javascript={`
-alert(true && true); // true
-alert(false && true); // false
-alert(true && false); // false
-alert(false && false); // false
+alert(true && true);
+alert(false && true);
+alert(true && false);
+alert(false && false);
 `}/>
 當然我們在寫如果條件判斷時，更常用比較運算來表達，所以我們替換它後得到的結果也是一樣
 <Playground javascript={`
-alert(20 > 10 && 20 > 10); // true
-alert(5 < 3 && 20 > 10); // false
-alert(20 > 10 && 5 < 3); // false
-alert(5 < 3 && 5 < 3); // false
+alert(20 > 10 && 20 > 10);
+alert(5 < 3 && 20 > 10);
+alert(20 > 10 && 5 < 3);
+alert(5 < 3 && 5 < 3);
 `}/>
 
 ## 或者
 或者語法，也一樣可以將多個條件合併起來，但它的運作方式不一樣，是只要有任何一個條件為 true 時，它就會返回 true
 
 <Playground javascript={`
-alert(true || true); // true
-alert(false || true); // true
-alert(true || false); // true
-alert(false || false); // false
+alert(true || true);
+alert(false || true);
+alert(true || false);
+alert(false || false);
 `}/>
 
 將範例替換成比較運算的式子，得到的結果也是一樣
 <Playground javascript={`
-alert(20 > 10 || 20 > 10); // true
-alert(5 < 3 || 20 > 10); // true
-alert(20 > 10 || 5 < 3); // true
-alert(5 < 3 || 5 < 3); // false
+alert(20 > 10 || 20 > 10);
+alert(5 < 3 || 20 > 10);
+alert(20 > 10 || 5 < 3);
+alert(5 < 3 || 5 < 3);
 `}/>
 
 ## 相反
@@ -69,3 +70,9 @@ alert(5 < 3 || 5 < 3); // false
 alert(!true);
 alert(!false);
 `}/>
+
+<Quiz
+  description={`在 JavaScript 程式中 && 符號是什麼意思？`}
+  options={['而且', '或者']}
+  answer={0}
+/>

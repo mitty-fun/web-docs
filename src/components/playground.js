@@ -32,20 +32,21 @@ class Playground extends React.Component {
 
   constructor(props) {
 
+    super(props)
+
     let lang, tab
     if (props.html) lang = 'html'
     if (props.css) lang = 'css'
     if (props.javascript) lang = 'javascript'
     if (props.python) lang = 'python'
 
-    super(props)
     this.state = {
       html: props.html || '',
       css: props.css || '',
       javascript: props.javascript || '',
       python: props.python || '',
       lang,
-      tab: 'console',
+      tab: this.props.html ? 'view' : 'console',
       logs: [],
       isShowResult: false,
       isShowButtons: false,
@@ -212,8 +213,8 @@ class Playground extends React.Component {
           </div>
 
           <div className={styles.languages}>
-            {this.props.javascript && <span className={`${styles.btn} ${this.state.tab === 'console' && styles.active}`} onClick={() => this.showTab('console')}>Console</span>}
-            {this.props.html && <span className={`${styles.btn} ${this.state.tab === 'view' && styles.active}`} onClick={() => this.showTab('view')}>View</span>}
+            {this.props.javascript && <span className={`${styles.btn} ${this.state.tab === 'console' && styles.active}`} onClick={() => this.showTab('console')}>主控台</span>}
+            {this.props.html && <span className={`${styles.btn} ${this.state.tab === 'view' && styles.active}`} onClick={() => this.showTab('view')}>介面</span>}
           </div>
         </div>
       </div>

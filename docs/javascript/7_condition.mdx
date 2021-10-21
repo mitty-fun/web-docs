@@ -3,6 +3,7 @@ title: '7. 條件判斷'
 sidebar_position: 7
 ---
 import Playground  from '../../src/components/playground'
+import Quiz  from '../../src/components/quiz'
 
 # 條件判斷
 程式中的條件判斷，就像是寫文章所使用「如果 ... 就 ...」的造樣造句。
@@ -191,3 +192,13 @@ if (score >= 90) {
 `}/>
 程式會由第一個條件依序往下判斷，如果有條件成立就會執行對應的大括號內的程式，執行完後後面的程式就不再判斷執行，
 如果所有的條件都不成立，最後就會執行 `else` 否則語法後的程式。
+
+<Quiz
+  description={`請問關於 JavaScript 條件判斷語法何者錯誤？`}
+  options={[
+    '條件判斷語法一定會有 if 和一對小括號 () 組合而成',
+    '小括號內的條件如果是 true 就會執行大括號內的程式',
+    '使用 else if 語法最後一定要寫 else 語法，否則程式會出錯',
+  ]}
+  answer={2}
+/>

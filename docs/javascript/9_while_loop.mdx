@@ -3,6 +3,7 @@ title: '9. 認識 while 迴圈'
 sidebar_position: 9
 ---
 import Playground  from '../../src/components/playground'
+import Quiz  from '../../src/components/quiz'
 
 # while 迴圈
 迴圈是用來重複執行指定範圍內的程式。
@@ -112,7 +113,6 @@ while (i < 100) {
 }
 `}/>
 
-
 變數 i 起始值是 40 結束條件是高於 100，每次執行時遞增 1
 <Playground javascript={`let i = 40;
 while (i < 80) {
@@ -143,3 +143,12 @@ while (i > -50) {
 
 透過上面五個範例後，你可以歸納出三個要素，分別是起始值、條件、變化，
 這是讓 while 迴圈去執行固定次數時三個重要的元素。
+
+<Quiz
+  description={`如果在 while 語法的小括號內直接填入布林值 true 並執行程式，會發生什麼事情？`}
+  options={[
+      '程式會出現語法錯誤',
+      '程式會停不下來，導致網頁被癱瘓'
+  ]}
+  answer={1}
+/>

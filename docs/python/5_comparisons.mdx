@@ -3,6 +3,7 @@ title: '5. 比較運算'
 sidebar_position: 5
 ---
 import Playground  from '../../src/components/playground'
+import Quiz  from '../../src/components/quiz'
 
 # 比較運算
 在資料型態章節我們介紹了三種原始資料型態，分別為數值、字串、布林值。
@@ -13,6 +14,26 @@ import Playground  from '../../src/components/playground'
 <Playground python={`
 print(10 > 5) # 印出 true
 `}/>
+
+執行後會看到主控台印出 `True` 表示比較後的結果為**真**。
+
+## 布林值資料是什麼
+程式會透過布林值來表示某個陳述句是否成立<br/>
+布林值 `True` 表示真的、正確、成立、對、是。<br/>
+布林值 `False` 表示假的、不正確、不成立、不對、否。
+
+<Quiz
+  description={`請問底下哪一個句子不能用布林值描述其真假？`}
+  options={[
+    '今天的天氣是晴天',
+    '今天幾月幾號',
+    '我愛妳',
+  ]}
+  answer={1}
+/>
+
+程式中的布林值用來表示某個描述是否是真的，該描述通常是一個陳述句，
+但如果這個句子不是陳述句而是一個「誰、什麼、怎麼、哪裡」的問句，是無法用真或假的布林值來描述。
 
 ## 六種常用的比較符號
 大於、小於、大於等於、小於等於、相等、不相等

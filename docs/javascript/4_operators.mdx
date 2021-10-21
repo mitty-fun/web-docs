@@ -3,6 +3,7 @@ title: '4. 四則運算'
 sidebar_position: 4
 ---
 import Playground  from '../../src/components/playground'
+import Quiz  from '../../src/components/quiz'
 
 # 四則運算
 程式可以幫我們去做大量的運算，所以也會有對應常見的運算符號，例如加減乘除等。
@@ -62,18 +63,41 @@ console.log(a);
 ## 遞增和遞減
 如果要讓變數裡的數值增加 1 有三種方式，試著執行以下程式看看結果是否都一樣是 `11` 。
 <Playground javascript={`
-// 第一種方式
 let a = 10;
 a = a + 1;
-console.log(a);\n
-// 第二種方式
-let b = 10;
-b += 1;
-console.log(b);\n
-// 第三種方式
-let c = 10;
-c++;
-console.log(c);
+console.log(a);
 `}/>
-除了遞增 1 可以寫成 `++` 外遞減是否可以寫成 `--` 呢？<br/>
+<Playground javascript={`
+let a = 10;
+a += 1;
+console.log(a);
+`}/>
+<Playground javascript={`
+let a = 10;
+a++;
+console.log(a);
+`}/>
+
+除了遞增 1 可以寫成 `++` 外，遞減是否可以寫成 `--` 呢？<br/>
 試著把 `+` 號改成 `-` 減號並重新執行看看，是否結果都會是 `9` 吧！
+
+## 應用時間
+在學會程式做數學計算的幾個基本符號後，我們來設計一個計算梯形面積的程式，<br/>
+它會讓使用者輸入上底、下底、高的數值，並計算出面積顯示。
+<Playground javascript={`
+let a = prompt('梯形上底：');
+let b = prompt('梯形下底：');
+let c = prompt('梯形高：');\n
+let area = (a + b) * c / 2;
+alert('梯形面積為：' + area);
+`}/>
+
+<Quiz
+  description={`最後一個範例程式如果把 (a + b) 的小括號給移除，執行後會有什麼不同？`}
+  options={[
+    '執行結果一樣',
+    '計算出來的結果會不正確',
+    '程式會出現錯誤導致無法執行',
+  ]}
+  answer={1}
+/>
