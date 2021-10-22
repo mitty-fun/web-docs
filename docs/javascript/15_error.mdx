@@ -3,8 +3,9 @@ sidebar_position: 15
 title: '15. 程式出錯啦'
 ---
 import Playground  from '../../src/components/playground'
+import Quiz  from '../../src/components/quiz'
 
-# 錯誤訊息
+# 程式出錯啦
 程式是一種和電腦溝通的語言，如果電腦聽不懂你所說的指令，它就無法按照你所預期的去執行。<br/>
 但電腦仍會試著告訴你它看不懂的地方，這就是錯誤訊息。
 
@@ -114,6 +115,15 @@ console.log(a + b);
 執行程式我們發現輸入的兩個數值並不會做加法計算，如果仔細觀察會發現程式其實是把兩個數值文字串接起來。<br/>
 所以我們可以猜測 `a` 和 `b` 兩個變數裡的資料型態是數值而不是字串。<br/>
 原因是 `prompt` 函式取得輸入時就是字串型態，如果要做數學計算要透過 `Number` 函式將資料轉換成數值才行。
+
+<Quiz
+  description={`主控台出現錯誤訊息「apple is not defined」表示？`}
+  options={[
+    '發生語法錯誤，可能是程式語法的括號少了一個',
+    'apple 變數不存在，可能是變數名稱拼錯',
+  ]}
+  answer={1}
+/>
 
 <!---
 ## 除錯技巧

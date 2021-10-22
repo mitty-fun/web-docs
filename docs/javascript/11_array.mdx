@@ -3,6 +3,7 @@ title: '11. 認識陣列'
 sidebar_position: 11
 ---
 import Playground  from '../../src/components/playground'
+import Quiz  from '../../src/components/quiz'
 
 # 認識陣列
 陣列是程式用來存放大量資料的一種方式。
@@ -124,3 +125,26 @@ let rand = Math.floor(Math.random() * count);
 let winner = names[rand];
 alert('得獎的是' + name);
 `}/>
+
+## 二維陣列
+二維陣列就是陣列中再存放一個陣列，我們可以把大的陣列想像是一個很大的櫃子，
+這個櫃子的每個抽屜裡面又放了一個小的收納盒(小櫃子)。
+
+想想看最後一行程式會印出什麼？執行看看驗證自己所想的是不是正確的
+<Playground python={`
+let grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+console.log(grid[2][1])
+`}/>
+
+`grid[2]` 會取得 grid 陣列中編號 2 的元素也就是第 3 個元素 `[7, 8, 9]`，接著<br/>
+`grid[2][2]` 再從取出的串列中取出編號 1 的元素，也就是 `[7, 8, 9]` 第 2 個元素數值數值 8
+
+<Quiz
+  description={`在最後一個範例中如果要印出數值 5 請問最後一行 console.log 裡要改成什麼？`}
+  options={[
+    'grid[0][0]',
+    'grid[1][1]',
+    'grid[2][2]',
+  ]}
+  answer={2}
+/>

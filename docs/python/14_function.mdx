@@ -3,6 +3,7 @@ sidebar_position: 14
 title: '14. 函式'
 ---
 import Playground  from '../../src/components/playground'
+import Quiz  from '../../src/components/quiz'
 
 # 函式
 一個龐大的系統背後的程式會是許多人一起共同開發，如何讓每個人設計的功能整合起來，<br/>
@@ -30,7 +31,7 @@ import Playground  from '../../src/components/playground'
 例如你可以設計一個果汁機的函式，你可以傳入水果作為原物料，經過一番處理後它就會輸出打好的果汁給你。
 
 試著執行以下程式看看會印出什麼：
-<Playground javascript={`
+<Playground python={`
 def juicer(fruit):
   drink = fruit + '汁'
   return drink\n
@@ -46,7 +47,7 @@ print(juicer)
 `return` 語法是將最後的成品結果返回，此語法後面的程式將不會再被執行。
 
 接著試著去執行這個函式，執行看看吧：
-<Playground javascript={`
+<Playground python={`
 def juicer(fruit):
   drink = fruit + '汁'
   return drink\n
@@ -59,7 +60,7 @@ print(a)
 
 ### 函式不一定要有輸入或輸出
 這是沒有輸入的函式：
-<Playground javascript={`
+<Playground python={`
 def hi ():
   return '你好'\n
 result = hi()
@@ -67,14 +68,14 @@ print(result)
 `} />
 
 這是沒有輸出的函式：
-<Playground javascript={`
+<Playground python={`
 def hi (text) {
   print(text)\n
 hi('你好')
 `} />
 
 這是沒有輸入和輸出的函式：
-<Playground javascript={`
+<Playground python={`
 def hi ():
   print('妳好')\n
 hi()
@@ -85,7 +86,7 @@ hi()
 因此執行 `return` 語法後，整個函式程式將會結束不再執行。
 
 看看以下程式執行後會印出什麼？
-<Playground javascript={`
+<Playground python={`
 def test ():
   print('A')
   return 'A'
@@ -102,3 +103,30 @@ print(result)
 該程式會印出兩個 A 字母，這是因為執行 `test` 函式後，<br/>
 裡面會印出 A 字母，接著就執行 return 語法返回一個 A 字母，返回後函式就不再執行。<br/>
 接著在最後一行程式會將執行 `test` 函式返回的結果字母 A 印出。
+
+## 挑戰你的大腦
+執行以下程式最後變數 result 裡的數值會是什麼？想想看並試著印出來驗證看看
+<Playground python={`
+function add (a, b) {
+  return a + b;
+}
+let result = add(add(10, 20), 30);
+`} />
+
+<Quiz
+  description={`在最後一個範例程式裡，如果執行 add(add(10, 10), add(10, 10)) 請問最後會計算出什麼數值？`}
+  options={[
+    '10',
+    '20',
+    '40',
+    '80',
+  ]}
+  answer={2}
+/>
+
+:::caution 重點整理
+* 語法 def 是用來創造函式
+* 語法 return 在函式中是用來傳回資料
+* 函式參數寫在小括號中並用逗號相隔
+* 在函式後加上一對小括號表示執行它
+:::

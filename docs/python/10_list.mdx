@@ -3,6 +3,7 @@ title: '10. 認識串列'
 sidebar_position: 10
 ---
 import Playground  from '../../src/components/playground'
+import Quiz  from '../../src/components/quiz'
 
 # 認識串列
 串列是程式用來存放大量資料的一種方式。
@@ -124,3 +125,35 @@ rand = randrange(count)
 winner = names[rand]
 print('得獎的是 ' + winner)
 `}/>
+
+## 二維陣列
+二維陣列就是陣列中再存放一個陣列，我們可以把大的陣列想像是一個很大的櫃子，
+這個櫃子的每個抽屜裡面又放了一個小的收納盒(小櫃子)。
+
+想想看最後一行程式會印出什麼？執行看看驗證自己所想的是不是正確的
+<Playground python={`
+grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(grid[2][1])
+`}/>
+
+`grid[2]` 會取得 grid 陣列中編號 2 的元素也就是第 3 個元素 `[7, 8, 9]`，接著<br/>
+`grid[2][2]` 再從取出的串列中取出編號 1 的元素，也就是 `[7, 8, 9]` 第 2 個元素數值數值 8
+
+<Quiz
+  description={`在最後一個範例中如果要印出數值 5 請問最後一行要改成什麼？`}
+  options={[
+    'print(grid[0][0])',
+    'print(grid[1][1])',
+    'print(grid[2][2])',
+  ]}
+  answer={2}
+/>
+
+:::caution 重點整理
+* 串列用一對中括號表示，裡面的資料以逗號分隔開
+* 串列中每一筆資料都有一個獨一無二的編號，
+* 而該編號從 0 開始，依序往後數（0, 1, 2,...）
+* appned 語法可以將資料新增進串列尾端
+* pop 語法可以將串列尾端的資料移除
+* pop(數字)可以移除串列中特定編號的資料
+:::

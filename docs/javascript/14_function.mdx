@@ -3,6 +3,7 @@ sidebar_position: 14
 title: '14. 函式'
 ---
 import Playground  from '../../src/components/playground'
+import Quiz  from '../../src/components/quiz'
 
 # 函式
 一個龐大的系統背後的程式會是許多人一起共同開發，如何讓每個人設計的功能整合起來，<br/>
@@ -108,3 +109,29 @@ console.log(result);
 該程式會印出兩個 A 字母，這是因為執行 `test` 函式後，<br/>
 裡面會印出 A 字母，接著就執行 return 語法返回一個 A 字母，返回後函式就不再執行。<br/>
 接著在最後一行程式會將執行 `test` 函式返回的結果字母 A 印出。
+
+## 挑戰你的大腦
+執行以下程式最後變數 result 裡的數值會是什麼？想想看並試著印出來驗證看看
+<Playground javascript={`
+def add (a, b):
+  return a + b
+result = add(add(10, 20), 30)
+`} />
+
+<Quiz
+  description={`在最後一個範例程式裡，如果執行 add(add(10, 10), add(10, 10)) 請問最後會計算出什麼數值？`}
+  options={[
+    '10',
+    '20',
+    '40',
+    '80',
+  ]}
+  answer={2}
+/>
+
+:::caution 重點整理
+* 語法 function 是用來創造函式
+* 語法 return 在函式中是用來傳回資料
+* 函式參數寫在小括號中並用逗號相隔
+* 在函式後加上一對小括號表示執行它
+:::

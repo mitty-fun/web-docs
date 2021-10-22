@@ -51,25 +51,25 @@ const config = {
             to: 'docs/python/intro',
             docId: 'python/intro',
             position: 'left',
-            label: 'PYTHON 筆記',
+            label: 'PYTHON 教學',
           },
           {
             to: 'docs/javascript/intro',
             docId: 'javascript/intro',
             position: 'left',
-            label: 'JAVASRIPT 筆記',
+            label: 'JAVASRIPT 教學',
           },
           {
             to: 'docs/html/intro',
             docId: 'html/intro',
             position: 'left',
-            label: 'HTML 筆記',
+            label: 'HTML 教學',
           },
           {
             to: 'docs/css/intro',
             docId: 'css/intro',
             position: 'left',
-            label: 'CSS 筆記',
+            label: 'CSS 教學',
           },
           {
             href: 'https://koding.school/',
@@ -85,19 +85,19 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'JavaScript 筆記',
+                label: 'JavaScript 教學',
                 to: '/docs/JavaScript/intro',
               },
               {
-                label: 'Python 筆記',
+                label: 'Python 教學',
                 to: '/docs/Python/intro',
               },
               {
-                label: 'HTML 筆記',
+                label: 'HTML 教學',
                 to: '/docs/html/intro',
               },
               {
-                label: 'CSS 筆記',
+                label: 'CSS 教學',
                 to: '/docs/css/intro',
               },
             ],
