@@ -1,0 +1,58 @@
+---
+sidebar_position: 14
+title: '14. 遍尋陣列'
+---
+import Playground  from '../../src/components/playground'
+import Quiz  from '../../src/components/quiz'
+
+# 遍尋陣列
+
+底下程式中 `scores` 變數是一個存有全班所有人成績的陣列
+<Playground javascript={`
+let scores = [90, 80, 69, 49, 98, 83, 77, 93, 85, 93];
+`} />
+如果要計算全班平均成績該怎麼做？<br/>
+如果要找出分數最高或最低的分數該怎麼做？
+
+## 使用迴圈遍尋
+底下的陣列資料預設有 10 筆的成績，其編號是 `0, 1, 2 ... 9`，<br/>
+如果要將陣列中的每一筆分數逐一印出，我們就需要搭配一個迴圈，該迴圈會數數從 0 數到 9，<br/>
+並將數的數字作為編號讀取陣列中對應資料的分數。
+<Playground javascript={`
+let scores = [90, 80, 69, 49, 98, 83, 77, 93, 85, 93];\n
+for (let i = 0; i < cores.length; i++) {
+    let s = scores[i];
+    console.log('座號' + i + '同學成績是' + s + '分');
+}
+`} />
+
+## 計算總和與平均
+要計算平均分數就要先算出總和，我們可以創造一個變數 `total` 負責儲存所有的分數加總，<br/>
+接著透過迴圈逐一讀取陣列中的數字，並把讀取出來的數值加入到 `total` 變數中，<br/>
+最後在計算平均分數時，就是總和除以人數 `scores.length` 就可以算出。
+<Playground javascript={`
+let scores = [90, 80, 69, 49, 98, 83, 77, 93, 85, 93];
+let total = 0;\n
+for (let i = 0; i < cores.length; i++) {
+    let s = scores[i];
+    total += s;
+}
+console.log('總和為' + total + '分');
+console.log('平均為' + (total / cores.length) + '分');
+`} />
+
+## 找出最高分
+如果要從陣列中找出最大的數值，我們可以先創造一個變數 `best` 用來存放目前找到的最大數值，<br/>
+接著透過迴圈逐一讀取陣列中的數字，如果該讀取出來的數字比 `best` 數值還要大，就將找到的更大的數字存入 `best` 中<br/>
+當迴圈遍尋完所有的資料後，`best` 變數裡面就會是最大的數值。
+<Playground javascript={`
+let scores = [90, 80, 69, 49, 98, 83, 77, 93, 85, 93];\n
+let best = 0;
+for (let i = 0; i < cores.length; i++) {
+    let s = scores[i];
+    if (s > best) {
+        s = best;
+    }
+}
+console.log('最高分是' + best + '分');
+`} />

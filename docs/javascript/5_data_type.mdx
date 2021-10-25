@@ -1,0 +1,134 @@
+---
+title: '5. 認識資料型態'
+sidebar_position: 5
+---
+import Playground  from '../../src/components/playground'
+import Quiz  from '../../src/components/quiz'
+
+# 資料型態
+資料型態在程式中是一個非常重要的概念，在相同的運算操作下，會因為不同型態的資料，其結果就可能不一樣。
+
+<Playground javascript={`
+console.log(10 + 20);
+console.log('orange' + 'apple');
+`} />
+
+在程式中執行相加運算 `a + b` 將兩個資料加在一起，<br/>
+如果 a 和 b 都是數值，就會去做數學相加的計算，如果都是字串，就會將兩段文字合併。
+
+## 三種基本資料型態
+JavaScript 程式有設計許多種資料型態，我們先來認識最常見的三種，分別是：數值、字串、布林值。
+
+|型態|例子|描述|
+|-|-|-|
+|數值|1、2、10、15.4、-4、0|由阿拉伯數字組合而成，可以有正負符號、小數點|
+|字串|'妳好'、"你好"|一定是一對雙引號或單引號包住|
+|布林值  |true、false|只有兩種值 true 和 false，比較運算結果是用布林值表示|
+
+我們可以使用 `typeof` 語法來顯示資料的型態
+<Playground javascript={`
+console.log(typeof 1);
+console.log(typeof 'hi');
+console.log(typeof true);
+`}/>
+
+<Quiz
+  description={`請問以下哪一個是字串型態？`}
+  options={[
+    '"你好"',
+    '"123"',
+    '"true"',
+    '以上皆是'
+  ]}
+  answer={3}
+/>
+
+## 加法器
+想想看執行以下程式如果分別輸入 10, 20 最後會顯示什麼？
+<Playground javascript={`
+let a = prompt('加數：');
+let b = prompt('被加數：');
+console.log(a + b);
+`}/>
+
+答案是 `1020` 為什麼呢？
+
+因為 a, b 變數的資料型態都是字串，加號 `+` 會把兩邊的字串連起來，得出來的結果就是字串 1020。
+
+:::caution 取得輸入的資料型態
+`prompt` 方法取得使用者輸入的資料會是字串型態，因為跳出的輸入框沒辦法限制使用者輸入什麼樣的內容，<br/>
+可以是阿拉伯數字、英文字母、中文甚至各種符號，因此只好統一作為字串讓程式來後續處理。
+:::
+
+為了讓以上的程式可以做數學相加計算，我們可以使用 Number 方法，將輸入的內容轉換成數字型態。
+注意 Number 方法的 `N` 是大小，試著執行看看吧
+<Playground javascript={`
+let a = prompt('加數：');
+let b = prompt('被加數：');
+a = Number(a);
+b = Number(b);
+console.log(a + b);
+`}/>
+
+這樣仍無法避免使用者輸入非數字的資料，
+如果你試著輸入一些無法計算的內容例如英文字母，得到的結果會是 `NaN`。
+
+## 自動轉換型態
+我們知道了數字和數字相加，程式會做數學加法計算，字串和字串相加，程式會將兩段字串做合併，<br/>
+那如果是字串和數字相加呢？又或是相減、相乘呢？程式會不會出錯？讓我們來實驗看看
+
+<Playground javascript={`
+console.log('orange' + 10);
+console.log(10 + 'apple');
+`}/>
+
+看起來字串和數字相加，電腦會先將數字轉換成字串，再做字串相接的動作。
+我們經常會使用加號來將一些變數資料塞進文字中，例如：
+<Playground javascript={`
+let user = prompt('請輸入姓名');
+console.log('你好' + user + '很高興認識你！');
+`}/>
+
+我們再來做更多的實驗，兩邊都是由阿拉伯數字組成的字串
+<Playground javascript={`
+console.log('10' + '5');
+console.log('10' - '5');
+console.log('10' * '5');
+console.log('10' / '5');
+`}/>
+
+結果是相加 `+` 會做字串的串接，但是相減 `-` 相乘 `*` 相除 `/` 電腦都會試著把內容轉換成數值。<br/>
+但如過內容無法轉換成數值會發生什麼事情？
+<Playground javascript={`
+console.log('10' + 'apple');
+console.log('10' - 'apple');
+console.log('10' * 'apple');
+console.log('10' / 'apple');
+`}/>
+
+結果出現 NaN 和前面的例子一樣。
+
+:::caution NaN
+`NaN` 是 Not a Number 的縮寫，表示不是一個可以計算的數字，<br/>
+任何和 `NaN` 的資料去做數學運算最後結果仍會是 `NaN`，通常發生在電腦試著轉換其他型態為數字時失敗產生。
+:::
+
+
+<Quiz
+  description={`請問關於 JavaScript 程式以下敘述何者錯誤？`}
+  options={[
+    '數字和字串相加，結果會是字串',
+    '字串和數字相加，結果會是字串',
+    '字串和字串相加，結果會是字串',
+    '數字和數字相加，結果會是字串',
+  ]}
+  answer={3}
+/>
+
+:::info 重點整理
+* 字串用一對單引號或雙引號包住表示
+* 布林值只有兩種 true 或 false
+* prompt 方法取得使用者的輸入，其資料型態為字串
+* 加號 `+` 只要左右兩邊有一邊是字串，就會試著轉換成字串做相接的動作
+* 試著將資料轉換成數值型態時，如果無法轉換就會出現 `NaN`
+:::
