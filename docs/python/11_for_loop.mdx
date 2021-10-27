@@ -25,11 +25,10 @@ for i in nums:
     print(i)
 `}/>
 
-因為寫程式太常要用到執行「指定次數」的事情，因此誕生出了 range 方法。
-Range 會產生類似串列的東西。
+因為寫程式太常要用到執行「指定次數」的事情，因此誕生出了 `range` 方法，會產生類似串列的東西
 
 <Playground python={`
-nums = range(10) # 類似 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n
+nums = range(10) # 產生類似 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n
 for i in nums:
     print(i)
 `}/>
@@ -40,50 +39,96 @@ for i in range(10):
     print(i)
 `}/>
 
-## range 方法
-Range 是產生一種類似串列的東西，但本質上還是略微不同，但使用起來卻非常相似，
-Range 有三種使用方式，可以產生出各種數列。
-
-
-range(10) #[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-range(10, 20) #[10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
-range(10, 20, 3) #[10, 13, 16, 19]
-
+## 深入 range 方法
+`range` 是產生一種類似串列的東西，但本質上還是略微不同，但使用起來卻非常相似，
+`range` 有三種使用方式，可以產生出各種數列。
 
 只有一個參數的例子
 <Playground python={`
-# 印出 0, 1, 2, 3, ... 8, 9
-for i in range(10):
-    print(i)\n
-# 印出 0, 1, 2, 3, ... 28, 29
+# 印出 0 到 30
 for i in range(30):
     print(i)
 `}/>
 
 有兩個參數的例子
 <Playground python={`
-# 印出 10, 11, 12, 13, ... 18, 19
-for i in range(10, 20):
-    print(i)\n
-# 印出 70, 71, 72, 73, ... 88, 89
-for i in range(70, 90):
+# 印出 30 到 50
+for i in range(30, 50):
     print(i)
 `}/>
 
 有三個參數的例子
 <Playground python={`
-#印出 10, 12, 14, 16, 18, 20, 22, 24, 26, 28
-for i in range(10, 30, 2): 
-    print(i)\n
-#印出 10, 15, 20, 25
-for i in range(10, 30, 5):
+# 印出 30 到 50 每次遞增 2
+for i in range(30, 50, 2):
     print(i)
 `}/>
 
+你發現了嗎，range 的三個參數分別為**起始**、**結束**、**變化**。<br/>
+在前面章節 while 迴圈，我們最後做了印數列的練習，並歸納整理出三個要素在
+* 起始：迴圈開始前會執行一次，通常用來初始化計數迴圈次數的變數
+* 條件：條件滿足時迴圈才會不斷執行
+* 變化：迴圈每執行完一次，就會做一次變化，通常用來讓計數的變數遞增
+
+而 `for` 迴圈則是將這三個要素用 `range` 方法來做到，<br/>
+例如要印出 20 至 50 之間的 5 的倍數用 `while` 以及 `for ... in range` 迴圈寫法：
+<Playground python={`
+i = 0
+while i < 50:
+    print(i)
+    i += 1
+`}/>
+<Playground python={`
+for i in range(20, 50, 5):
+    print(i)
+`}/>
+
+:::caution 該使用什麼迴圈
+ `for` 搭配 `range` 迴圈能做到的 `while` 迴圈也可以，但 `for` 搭配 `range` 迴圈更適合在執行**指定次數**的迴圈，<br/>
+因為它把迴圈的三個要素都整理在小括號中，所以寫起來更簡單一目了然。<br/>
+相反的 `while` 迴圈比較適用於**不確定次數**的迴圈，例如之前的自動打怪程式，怪物的血量可以不固定。
+:::
+
+
+## 數列練習
+在前一個 `while` 迴圈的章節中最後，我們做了 5 個印出數列的範例程式，<br/>
+接下來我們要用 `for` 搭配 `range` 迴圈語法去改寫一樣的範例，你也可以回到上個章節去來回比較。
+
+<Playground python={`
+for i in range(100):
+    print(i)
+`}/>
+<Playground python={`
+for i in range(40, 80):
+    print(i)
+`}/>
+<Playground python={`
+for i in range(0, 100, 2):
+    print(i)
+`}/>
+<Playground python={`
+for i in range(100, 0, -1):
+    print(i)
+`}/>
+<Playground python={`
+for i in range(50, -50, -5):
+    print(i)
+`}/>
+
+<Quiz
+  description={`請問執行 range 方法並由左至右傳入三個參數分別代表什麼？`}
+  options={[
+      '起始、結束、變化',
+      '起始、變化、結束',
+      '變化、起始、結束',
+  ]}
+  answer={0}
+/>
+
 :::caution 重點整理
-* for 變數 in 串列，會把串列裡的元素從頭逐一取出並暫存在變數裡
-* range 是用來產生類似串列的數列
-* range(a) 會產生 0~a 不包含 a 的數列
-* range(a, b) 會產生 a~b 不包含 b 的數列
-* range(a, b, c) 會產生 a ~ b 不包含 b 的數列，且間隔是 c
+* `for` 變數 in 串列，會把串列裡的元素從頭逐一取出並暫存在變數裡
+* `range` 是用來產生類似串列的數列
+* `range(a)` 會產生 0~a 不包含 a 的數列
+* `range(a, b)` 會產生 a~b 不包含 b 的數列
+* `range(a, b, c)` 會產生 a ~ b 不包含 b 的數列，且間隔是 c
 :::

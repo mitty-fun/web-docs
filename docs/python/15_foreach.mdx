@@ -1,0 +1,51 @@
+---
+sidebar_position: 14
+title: '14. 遍尋串列'
+---
+import Playground  from '../../src/components/playground'
+import Quiz  from '../../src/components/quiz'
+
+# 遍尋串列
+
+底下程式中 `scores` 變數是一個存有全班所有人成績的陣列
+<Playground python={`
+scores = [90, 80, 69, 49, 98, 83, 77, 93, 85, 93]
+`} />
+如果要計算全班平均成績該怎麼做？<br/>
+如果要找出分數最高或最低的分數該怎麼做？
+
+## 使用 for 迴圈遍尋
+`for i in` 語法可以把串列中的資料逐一取出，並暫存在變數 `i` 裡（變數名稱是可以更改的），<br/>
+如果有 10 筆資料 `for` 迴圈就會執行十次，每次執行變數裡會是每一筆的資料。
+<Playground python={`
+scores = [90, 80, 69, 49, 98, 83, 77, 93, 85, 93]\n
+for s in scores:
+    print(s + '分')
+`} />
+
+## 計算總和與平均
+要計算平均分數就要先算出總和，我們可以創造一個變數 `total` 負責儲存所有的分數加總，<br/>
+接著透過迴圈逐一讀取陣列中的數字，並把讀取出來的數值加入到 `total` 變數中，<br/>
+最後在計算平均分數時，就是總和除以人數 `len(scores)` 就可以算出。
+
+<Playground python={`
+scores = [90, 80, 69, 49, 98, 83, 77, 93, 85, 93]
+total = 0\n
+for s in scores:
+    total += s\n
+print('總和為' + total + '分')
+print('平均為' + (total / len(scores)) + '分')
+`} />
+
+## 找出最高分
+如果要從陣列中找出最大的數值，我們可以先創造一個變數 `best` 用來存放目前找到的最大數值，<br/>
+接著透過迴圈逐一讀取陣列中的數字，如果該讀取出來的數字比 `best` 數值還要大，就將找到的更大的數字存入 `best` 中<br/>
+當迴圈遍尋完所有的資料後，`best` 變數裡面就會是最大的數值。
+<Playground python={`
+scores = [90, 80, 69, 49, 98, 83, 77, 93, 85, 93]\n
+best = 0
+for s in scores:
+    if s > best:
+        best = s\n
+print('最高分是' + best + '分')
+`} />

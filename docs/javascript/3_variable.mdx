@@ -21,14 +21,20 @@ import Quiz  from '../../src/components/quiz'
 程式中的等號有「賦值」的作用，會把等號右邊的內容存進左邊的對象（通常是變數）。
 :::
 
-<Playground javascript={`let a;\na = 10;`} />
+<Playground javascript={`
+let a;
+a = 10;
+`} />
 
 第一行的 `let` 語法是用來告訴電腦要創造一個名為 a 的變數。<br/>
 第二行的 `=` 等號語法是告訴電腦，將等號右邊的資料存入左邊的變數 a 中。<br/>
 試著加入第三行 `console.log(a);` 程式並執行看看會印出什麼吧。
 
 我們很經常要在創造變數的同時，存入一些預設的資料，因此我們可以將程式合併成一行：
-<Playground javascript={`let a = 10;\nconsole.log(a);`} />
+<Playground javascript={`
+let a = 10;
+console.log(a);
+`} />
 
 ## 修改變數
 如果要修改變數裡面既有的資料，一樣透過等號 `=` 儲存新的內容進去，就可以替換覆蓋既有的內容。<br/>
@@ -57,11 +63,21 @@ let 1apple;
 ## 挑戰你的大腦
 創造兩個變數 `a` 和 `b` 並都分別存入數值 `10` 和 `20`，想想看最後 `a` 和 `b` 是存入什麼樣的內容？<br/>
 加入 `console.log(a, b);` 程式到最後一行，並執行看看 `a` 和 `b` 變數裡的數值會是多少？
-<Playground javascript={`let a = 10;\nlet b = 20;\na = b;\nb = a;`} />
+<Playground javascript={`
+let a = 10;
+let b = 20;
+a = b;
+b = a;
+`} />
 
 我們再來做一些變化，創造兩個變數 `x` 和 `y` 並都分別存入數值 `10`，<br/>
 接著做了兩行的的相加計算，試著想想看最後 `a` 和 `b` 會存入什麼樣的內容？<br/>
-<Playground javascript={`let x = 10;\nlet y = 10;\nx = x + y;\ny = x + y;`} />
+<Playground javascript={`
+let x = 10;
+let y = 10;
+x = x + y;
+y = x + y;
+`} />
 
 <Quiz
   description={`執行最後一個範例程式，請問最後變數 x 和 y 裡的數值會是多少？`}

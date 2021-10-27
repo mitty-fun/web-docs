@@ -25,8 +25,8 @@ import Quiz  from '../../src/components/quiz'
 試著執行以下程式看看會印出什麼：
 <Playground javascript={`
 function juicer(fruit) {
-  let drink = fruit + '汁'
-  return drink
+    let drink = fruit + '汁'
+    return drink
 }\n
 console.log(juicer);
 `} />
@@ -34,16 +34,16 @@ console.log(juicer);
 我們成功的創造了一個函式 `juicer` 如果使用主控台印出可以看到該函式的內容。
 
 我們可以使用 `function` 語法去創造函式，後面接著的是函式的名稱，執行時會使用到它。<br/>
-接著會有一對小括號 `()` 和一對大括號 `{}`，
-小括號內是機器的原物料入口，定義這台機器需要輸入什麼樣的東西。
-大括號內是機器主要運作功能，定義這台機器會如何運作來完成任務。
+接著會有一對小括號 `()` 和一對大括號 `{}`，<br/>
+小括號內是機器的原物料入口，定義這台機器需要輸入什麼樣的東西。<br/>
+大括號內是機器主要運作功能，定義這台機器會如何運作來完成任務。<br/>
 `return` 語法是將最後的成品結果返回，此語法後面的程式將不會再被執行。
 
 接著試著去執行這個函式看看：
 <Playground javascript={`
 function juicer(fruit) {
-  let drink = fruit + '汁'
-  return drink
+    let drink = fruit + '汁'
+    return drink
 }\n
 let a = juicer('香蕉');
 console.log(a) //印出香蕉汁
@@ -56,7 +56,7 @@ console.log(a) //印出香蕉汁
 這是沒有輸入的函式：
 <Playground javascript={`
 function hi () {
-  return '你好';
+    return '你好';
 }\n
 let result = hi();
 console.log(result);
@@ -65,7 +65,7 @@ console.log(result);
 這是沒有輸出的函式：
 <Playground javascript={`
 function hi (text) {
-  console.log(text);
+    console.log(text);
 }
 hi('你好');
 `} />
@@ -73,7 +73,7 @@ hi('你好');
 這是沒有輸入和輸出的函式：
 <Playground javascript={`
 function hi () {
-  console.log('妳好');
+    console.log('妳好');
 }
 hi();
 `} />
@@ -85,14 +85,14 @@ hi();
 看看以下程式執行後會印出什麼？
 <Playground javascript={`
 function test () {
-  console.log('A');
-  return 'A';
-  console.log('B');
-  return 'B';
-  console.log('C');
-  return 'C';
-  console.log('D');
-  return 'D';
+    console.log('A');
+    return 'A';
+    console.log('B');
+    return 'B';
+    console.log('C');
+    return 'C';
+    console.log('D');
+    return 'D';
 }\n
 let result = test();
 console.log(result);
@@ -106,7 +106,7 @@ console.log(result);
 執行以下程式最後變數 result 裡的數值會是什麼？想想看並試著印出來驗證看看
 <Playground javascript={`
 def add (a, b):
-  return a + b
+    return a + b\n
 result = add(add(10, 20), 30)
 `} />
 
@@ -122,8 +122,8 @@ result = add(add(10, 20), 30)
 />
 
 :::caution 重點整理
-* 語法 function 是用來創造函式
-* 語法 return 在函式中是用來傳回資料
+* 語法 `function` 是用來創造函式
+* 語法 `return` 在函式中是用來傳回資料
 * 函式參數寫在小括號中並用逗號相隔
 * 在函式後加上一對小括號表示執行它
 :::

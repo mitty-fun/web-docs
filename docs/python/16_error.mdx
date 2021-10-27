@@ -1,6 +1,6 @@
 ---
-sidebar_position: 15
-title: '15. 程式出錯啦'
+sidebar_position: 16
+title: '16. 程式出錯啦'
 ---
 import Playground  from '../../src/components/playground'
 import Quiz  from '../../src/components/quiz'
@@ -39,7 +39,7 @@ else:
   print('一樣大')
 `} />
 
-:::info 小技巧
+:::caution 小技巧
 「IndentationError」表示縮排錯誤，保持良好的排版習慣，
 除了幫助自己和別人容易閱讀，也可以讓我們快速的發現這些錯誤！
 :::
@@ -71,7 +71,7 @@ print(rand)
 
 眼尖的你們應該就會發現，產生隨機數整數是 random 套件下 `randrange` 方法，但是我們把 `a` 的拼錯成 `e`。
 
-:::info 小技巧
+:::caution 小技巧
 當主控台出現「NameError」錯誤訊息時，表示電腦去讀取 xx 時卻找不到，通常是變數、函式名稱拼錯。
 :::
 
@@ -102,3 +102,10 @@ print(a + b)
   ]}
   answer={3}
 />
+
+
+:::info 重點整理
+* 良好的縮排習慣可以幫助你減少發生語法錯誤
+* `IndentationError` 表示縮排錯誤，保持良好的排版習慣
+* `NameError` 表示電腦去讀取某個名稱的變數或方法但找不到，通常是變數、函式名稱拼錯。
+:::

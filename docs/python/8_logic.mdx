@@ -8,10 +8,9 @@ import Quiz  from '../../src/components/quiz'
 # 邏輯運算
 邏輯運算符號可以幫助我們去組織更複雜的條件。
 
-想像一個情境，小明想要報名 Scratch 遊戲設計比賽，但這個比賽限制只能國小、國中、高中的學生參加，<br/>
-也就是說年齡必須介於 7 - 18 歲之間，因此報名網站的程式，必須判斷報名的學生輸入的年紀有沒有符合資格。
-
-把審核的流程用程式來撰寫，只有輸入 7 - 18 數值才會顯示「你可以報名！」
+想一個情境，小明想要報名 Scratch 遊戲競賽設計大賽，但這個大賽限制只能國小、國中、高中參賽，<br/>
+也就是年齡必須介於 7 - 18 歲之間，因此在報名網頁必須輸入年齡，並用程式判斷報名的人有沒有資格。<br/>
+如果我們把審核的流程用程式來撰寫
 <Playground python={`
 age = int(input('請輸入年齡:'))\n
 if age >= 7:
@@ -19,30 +18,26 @@ if age >= 7:
         print('你可以報名！')
 `}/>
 
-但如果要增加審核的條件，就會讓程式「越陷越深」。<br/>
-這樣並不是一個好的設計，因此我們可以應用接下來將要學到的邏輯運算來簡化它。
+如果審核的條件增加，會讓程式「越陷越深」這並不是一個好的設計，因此可以用接下要學的邏輯運算來簡化。
 
-## 而且語法
-使用邏輯運算的「而且」語法，可以將多個必須具備的條件合併一起，<br/>
-只有所有條為 `True` 時，它才會返回 `True，`，透過這個方式可以簡化上一個範例程式。
-
-在 python 程式中**而且**的語法是 `or` 我們可以改寫成這樣
+## 而且
+這時我們可以使用邏輯運算的而且 `and` 語法，它可以將多個必須具備的條件合併一起，<br/>
+只有所有條為 `True` 時，它才會返回 `True` ，因此我們可以改寫上述程式為：
 <Playground python={`
 age = int(input('請輸入年齡:'))\n
 if age >= 7 and age <= 18:
     print('你可以報名！')
 `}/>
-這樣程式就少寫了一個 if 判斷，是不是相較就更簡潔了。
+這樣改寫程式相較更簡潔多了。
 
-### 運作原理
-而且 `and` 語法會判斷它左右兩邊的對象，只有在左右兩邊都是 `True` 的情況下，它才會返回 `True` 否則反回 `False`
+而且 `and` 語法會判斷它左右兩邊的對象，只有在左右兩邊都是 `True` 的情況下，它才會返回 `True` 否則反回 `False`。
+
 <Playground python={`
 print(True and True)
 print(False and True)
 print(True and False)
 print(False and False)
 `}/>
-
 當然我們在寫如果條件判斷時，更常用比較運算來表達，所以我們替換它後得到的結果也是一樣
 <Playground python={`
 print(20 > 10 and 20 > 10)
@@ -51,33 +46,17 @@ print(20 > 10 and 5 < 3)
 print(5 < 3 and 5 < 3)
 `}/>
 
-## 或者語法
-或者語法，也一樣可以將多個條件合併起來，但它的運作方式不一樣，<br/>
-是只要有任何一個條件為 `True` 時，它就會返回 `True`
+## 或者
+或者 `or` 語法會判斷它左右兩邊的對象，只要左右兩邊至少有一個 `true` 的情況下，它就會返回 `true` 否則反回 `false`。
 
-例如老師為了鼓勵學生在考試前認真複習，決定給出獎勵方式。<br/>
-老師對學生這麼說：「只要是國文**或**英文科目，就可以獲得禮券！」
-
-如果撰寫成程式可以這麼表示：
 <Playground python={`
-en = int(input('英文成績:'))
-ch = int(input('國文成績:'))\n
-if en >= 60 or ch >= 60:
-    print('你可以獲得禮卷')
-else:
-    print('下次再努力')
+print(true or true)
+print(false or true)
+print(true or false)
+print(false or false)
 `}/>
 
-### 運作原理
-在 python 程式中**或者**的語法是 `and` 因此我們可以改寫上述程式為：
-<Playground python={`
-print(True or True)
-print(False or True)
-print(True or False)
-print(False or False)
-`}/>
-
-當然我們在寫如果條件判斷時，更常用比較運算來表達，所以我們替換它後得到的結果也是一樣
+將範例替換成比較運算的式子，得到的結果也是一樣
 <Playground python={`
 print(20 > 10 or 20 > 10)
 print(5 < 3 or 20 > 10)
@@ -85,39 +64,21 @@ print(20 > 10 or 5 < 3)
 print(5 < 3 or 5 < 3)
 `}/>
 
-## 相反語法
-驚嘆號 `not` 語法會將布林值 `True` 和 `False` 互相變換，<br/>
-`True` 會變成 `False`，`False` 會變成 `True`
+## 相反
+相反與可以將布林值顛倒過來，`true` 會變成 `false`，`false` 會變成 `true`
 <Playground python={`
 print(not True)
 print(not False)
 `}/>
 
-例如老師和學生這麼說：「如果英文**和**國文兩個科目不及格，就要留下來補考！」<br/>
-寫成程式的話可以這樣表示：
-<Playground python={`
-en = int(input('英文成績:'))
-ch = int(input('國文成績:'))\n
-if not en >= 60 and not h >= 60:
-    print('你要補考')
-`}/>
-
-當然 `not` 語法可以讓語意更明確，在某些情況下可以簡化程式，但就算不使用也可以換個方式表達：
-<Playground python={`
-en = int(input('英文成績:'))
-ch = int(input('國文成績:'))\n
-if en < 60 and h < 60:
-    print('你要補考')
-`}/>
-
 <Quiz
-  description={`在 Python 程式中當多個條件都要成立才執行程式，可以使用什麼邏輯語法將條件合併？`}
-  options={['or', 'and', 'not']}
-  answer={1}
+  description={`在 Python 程式中 and 符號是什麼意思？`}
+  options={['而且', '或者']}
+  answer={0}
 />
 
-:::caution 重點整理
-* and 和 or 語法可以將條件整合起來
-* and 語法是左邊和右邊都成立時，條件才會執行
-* or 語法是左邊和右邊任一成立時，條件就會執行 
+:::info 重點整理
+* `and` 和 `or` 語法可以將條件整合起來
+* `and` 語法是左邊和右邊都成立時，條件才會執行
+* `or` 語法是左邊和右邊任一成立時，條件就會執行 
 :::
