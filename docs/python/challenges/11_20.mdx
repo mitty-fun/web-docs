@@ -1,0 +1,251 @@
+---
+title: '經典 35 道考題 11-20'
+sidebar_position: 2
+---
+import Quiz  from '../../../src/components/quiz'
+
+## 11 四則運算
+```python
+a = 1
+a += 2
+a *= 3
+a -= 4
+a /= 5
+```
+<Quiz
+  description={`請問執行以下程式最後變數 a 會印出什麼？`}
+  options={[
+    '1.0',
+    '2.0',
+    '3.0',
+    '4.0',
+  ]}
+  answer={0}
+  explanation={`遇到除法資料型態會被轉為浮點數`}
+/>
+
+
+## 12 輸入與輸出
+```python
+a = input()
+b = input()
+c = input()
+
+print(a + b + c)
+```
+<Quiz
+  description={`執行以下程式，並分別輸入三個成績 3, 4, 5 請問會印出什麼？`}
+  options={[
+    '10',
+    '12',
+    '123',
+    '345',
+  ]}
+  answer={3}
+  explanation={`input 語法所取得的型態型態一定是字串，因此相加時會做字串的串接。`}
+/>
+
+## 13 輸入與輸出
+```python
+a = int(input('加數：'))
+b = int(input('被加數：'))
+
+c = a + b
+print('總和：' + c)
+```
+<Quiz
+  description={`執行以下程式，並輸入 30, 50 請問會印出什麼？`}
+  options={[
+    '30',
+    '80',
+    '3080',
+    '程式會出現執行錯誤',
+  ]}
+  answer={3}
+  explanation={`在印出總和時變數 c 的資料是整數，字串與整數相加會造成程式錯誤，必須先把變數 c 轉換成字串型態才能做串接的動作。`}
+/>
+
+
+## 14 輸入與輸出
+```python
+pwd = input('請輸入金庫密碼')
+
+if pwd == 123456789:
+    print('密碼正確')
+else:
+    print('密碼錯誤')
+```
+<Quiz
+  description={`執行以下程式，並輸入 123456789 請問會印出什麼？`}
+  options={[
+    '密碼正確',
+    '密碼錯誤',
+    '什麼都不會印',
+    '程式會出錯無法執行',
+  ]}
+  answer={1}
+  explanation={`input 取得輸入時的資料型態是字串，在條件判斷時字串與數值是不相等的。`}
+/>
+
+
+
+## 15 條件判斷
+```python
+score = int(input('分數：'))
+
+if score > 60:
+    print('棒！')
+
+if score < 60:
+    print('不棒！')
+```
+<Quiz
+  description={`請問執行以下程式輸入 60 會印出什麼？`}
+  options={[
+    '棒！',
+    '不棒！',
+    '還行！',
+    '什麼都不會印出來',
+  ]}
+  answer={3}
+  explanation={`大於、小於不包含 60，因此兩個條件都不會執行`}
+/>
+
+
+## 16 條件判斷
+```python
+a = int(input('輸入：'))
+b = int(input('輸入：'))
+
+if a > b:
+    print('a 比較大')
+else:
+    print('b 比較大')
+```
+<Quiz
+  description={`請問執行以下程式輸入 30, 30 會印出什麼？`}
+  options={[
+    'a 比較大',
+    'b 比較大',
+    '一樣大',
+    '什麼都不會印',
+  ]}
+  answer={1}
+  explanation={`a > b 條件不成立就會執行 else 底下的程式`}
+/>
+
+## 17 條件判斷
+```python
+a = float(input('三角形第一個邊長：'))
+b = float(input('三角形第二個邊長：'))
+c = float(input('三角形第三個邊長：'))
+
+if a == b or b == c or c == a:
+    print('等腰三角形')
+
+elif a == b and b == c:
+    print('正三角形')
+
+else:
+    print('三邊不等長三角形')
+```
+<Quiz
+  description={`請問在輸入合法的三角形三個邊長情況下，何種三角形程式判斷會有錯誤的結果？`}
+  options={[
+    '正三角形',
+    '等腰三角形',
+    '三邊不等長三角形',
+    '無錯誤',
+  ]}
+  answer={0}
+  explanation={`輸入正三角形三個一樣邊長的數值，在第一個等腰三角形的條件判斷會成立，因此程式會印出等腰三角形並結束，正三角形會被錯誤判斷成等腰三角形。`}
+/>
+
+
+## 18 條件判斷
+```python
+a = int(input('a'))
+b = int(input('b'))
+c = int(input('c'))
+
+if a > b:
+    if a > c:
+        print('a 最大')
+    else:
+        print('b 最大')
+else:
+    if b > c:
+        print('b 最大')
+    else:
+        print('c 最大')
+```
+<Quiz
+  description={`執行以下程式分別輸入 10, 10, 5 請問程式會印出什麼？`}
+  options={[
+    'a 最大',
+    'b 最大',
+    'c 最大',
+    '什麼都不會印出來',
+  ]}
+  answer={1}
+  explanation={`
+  Step1 執行 a > b 判斷不成立，因此會執行 else 裡的程式
+  Step2 執行 b > c 判斷成立，因此會執行 if 裡的程式
+  Step3 印出「b 最大」的文字
+  `}
+/>
+
+
+## 19 條件判斷
+```python
+grade = float(input('輸入成績：'))
+
+if grade < 60:
+    print('E')
+elif grade < 70:
+    print('D')
+elif grade < 80:
+    print('C')
+elif grade < 90:
+    print('B')
+else:
+    print('A')
+```
+<Quiz
+  description={`請問執行以下程式輸入 60 分會印出什麼等級？`}
+  options={[
+    'E',
+    'D',
+    'C',
+    'B',
+  ]}
+  answer={1}
+  explanation={`第一個條件 grade < 60 不成立，第二個條件 grade < 70 成立，印出 D`}
+/>
+
+
+## 20 條件判斷
+```python
+a = True
+b = False
+c = a or b
+d = a and b
+e = c or d
+
+print(c, d, e)
+```
+
+<Quiz
+  description={`執行以下程式最後一行 c, d, e 會印出什麼？`}
+  options={[
+    'True, False, False',
+    'True, True, True',
+    'False, False, True',
+    'True, False, True',
+  ]}
+  answer={3}
+  explanation={`
+  or 是「或者」的語法，只要兩邊至少有一個 True 結果就是 True
+  and 是「而且」的語法，兩邊都要是 True 結果就是 True
+  `}
+/>

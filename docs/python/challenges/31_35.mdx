@@ -1,0 +1,126 @@
+---
+title: '經典 35 道考題 30-35'
+sidebar_position: 4
+---
+import Quiz  from '../../../src/components/quiz'
+
+## 31 函式
+```python
+def test(a=2, b=3):
+    return a * b
+
+print(test() + test(5) + test(5, 6))
+```
+<Quiz
+  description={`請問執行以下程式最後會印出什麼？`}
+  options={[
+    '12',
+    '46',
+    '51',
+    '80',
+  ]}
+  answer={2}
+  explanation={`
+  test() => 2*3 會得到 6
+  test(5) => 5*3  會得到 15
+  test(5, 6) => 5*6  會得到 30
+  相加後就是 51
+  `}
+/>
+
+
+## 32 函式
+```python
+def add (a, b):
+    return a + b
+
+def sub (a, b):
+    return a - b
+
+def mult (a, b):
+    return a * b
+
+result = mult(add(10, 20), sub(10, 20))
+
+print(result)
+```
+<Quiz
+  description={`請問執行以下程式最後會印出什麼？`}
+  options={[
+    '300',
+    '-300',
+    '900',
+    '900.0',
+  ]}
+  answer={1}
+  explanation={`
+Step0 mult(add(10, 20), sub(10, 20))
+Step1 mult(30, sub(10, 20))
+Step2 mult(30, -10)
+Step3 -300
+  `}
+/>
+
+
+## 33 函式
+```python
+from random import random
+```
+<Quiz
+  description={`請問產生 0-1 的隨機小數該執行？`}
+  options={[
+    'random()',
+    'randrange()',
+    'random.randrange()',
+    'random.random()',
+  ]}
+  answer={0}
+  explanation={`用 from import 語法會直接載入套件底下的方法，如果直接用套件名稱 + 點 + 方法會出現錯誤！`}
+/>
+
+
+## 34 套件
+```python
+import random
+
+rand = random.randrange(10, 30, 5)
+print(rand)
+```
+<Quiz
+  description={`請問執行以下程式不可能印出什麼？`}
+  options={[
+    '10',
+    '15',
+    '25',
+    '30',
+  ]}
+  answer={3}
+  explanation={`
+randrange 跟 range 的參數的用途非常相似，如果是三個參數分別用途是，
+範圍下界, 範圍上界（不包含）, 間隔，
+因此產生除了的隨機數值會在「10, 15, 20, 25」之間，但不包含 30 因使不可能產生出 30 的隨機數。
+  `}
+/>
+
+
+
+## 35 套件
+```python
+import random
+rand = random.random() * 1000 - 500
+print(rand)
+```
+<Quiz
+  description={`請問執行以下程式不可能印出什麼？`}
+  options={[
+    '-200',
+    '0',
+    '200',
+    '1200',
+  ]}
+  answer={3}
+  explanation={`
+random.random()*1000 會產生 0-1000 的隨機小數，
+Rand 的範圍會落在 -500 ~ 500 之間
+  `}
+/>
